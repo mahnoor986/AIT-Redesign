@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import NotFound from '@/pages/not-found';
+import NotFound from '@/views/not-found';
 import {
   Route,
   Switch,
@@ -13,13 +13,13 @@ import {
   Router as WouterRouter,
 } from 'wouter';
 
-import Home from '@/pages/Home';
-import ProgramDetail from '@/pages/ProgramDetail';
-import About from '@/pages/About';
-import Admissions from '@/pages/Admissions';
-import Campuses from '@/pages/Campuses';
-import Contact from '@/pages/Contact';
-import StudentPortal from '@/pages/StudentPortal';
+import Home from '@/views/Home';
+import ProgramDetail from '@/views/ProgramDetail';
+import About from '@/views/About';
+import Admissions from '@/views/Admissions';
+import Campuses from '@/views/Campuses';
+import Contact from '@/views/Contact';
+import StudentPortal from '@/views/StudentPortal';
 
 const queryClient = new QueryClient();
 
