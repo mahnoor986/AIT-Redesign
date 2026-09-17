@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AIT Institute"
+description = "A production-oriented, responsive education platform for discovering technical and vocational programs, exploring campuses, understanding admissions, and starting an application."
+version = "1.0.0"
+id = "artifacts/ait-institute"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22138
+
+[services.development]
+run = "pnpm --filter @workspace/ait-institute run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ait-institute", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ait-institute/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22138"
+BASE_PATH = "/"
