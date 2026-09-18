@@ -2,9 +2,10 @@ import AppLayout from '@/components/layout/AppLayout';
 import HeroSection from '@/components/home/HeroSection';
 import ImpactMetrics from '@/components/home/ImpactMetrics';
 import ProgramCatalog from '@/components/home/ProgramCatalog';
-import FlagshipDiploma from '@/components/home/FlagshipDiploma';
-import TestimonialCarousel from '@/components/home/TestimonialCarousel';
-import FaqSection from '@/components/home/FaqSection';
+import JourneySection from '@/components/home/JourneySection';
+import CertificationSection from '@/components/home/CertificationSection';
+import WhyChooseAIT from '@/components/home/WhyChooseAIT';
+import StudentReviews from '@/components/home/StudentReviews';
 import { Link } from 'wouter';
 
 export default function Home() {
@@ -13,30 +14,197 @@ export default function Home() {
       <HeroSection />
       <ImpactMetrics />
       <ProgramCatalog />
-      <FlagshipDiploma />
-      <TestimonialCarousel />
-      <FaqSection />
-      
+      <JourneySection />
+      <CertificationSection />
+      <WhyChooseAIT />
+      <StudentReviews />
+
       {/* Final CTA */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-white mb-6">
-            Ready to Start Your Tech Journey?
-          </h2>
-          <p className="text-xl text-slate-300 mb-10">
-            Admissions are open — join students building in-demand technology skills with AIT.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-accent text-white rounded-full font-bold text-lg hover:bg-accent/90 transition-all hover:shadow-lg hover:-translate-y-1 min-h-[48px] flex items-center justify-center">
-              Enroll Now
-            </Link>
-            <Link href="/programs" className="px-8 py-4 bg-slate-800 text-white rounded-full font-bold text-lg hover:bg-slate-700 transition-all min-h-[48px] flex items-center justify-center border border-slate-700">
-              Browse Programs
-            </Link>
+      <section className="bg-[#f5f7f8] py-14 md:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
+          <div
+            className="
+              relative
+              overflow-hidden
+              rounded-[32px]
+              md:rounded-[36px]
+              bg-gradient-to-br
+              from-[#264653]
+              via-[#264653]
+              to-[#2a9d8f]
+              px-6
+              py-12
+              sm:px-10
+              sm:py-14
+              md:px-16
+              md:py-16
+              lg:px-20
+              lg:py-20
+              text-center
+              text-white
+            "
+          >
+            {/* Decorative glow */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-24
+                -top-24
+                h-72
+                w-72
+                rounded-full
+                bg-[#2a9d8f]/25
+                blur-[90px]
+              "
+            />
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -bottom-24
+                -left-24
+                h-72
+                w-72
+                rounded-full
+                bg-[#f97316]/15
+                blur-[90px]
+              "
+            />
+
+            {/* Subtle center line */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                left-0
+                top-1/2
+                h-px
+                w-full
+                bg-gradient-to-r
+                from-transparent
+                via-white/10
+                to-transparent
+              "
+            />
+
+            {/* CTA Content */}
+            <div className="relative z-10 mx-auto max-w-4xl text-center">
+
+              {/* Heading */}
+              <h2
+                className="
+                  mx-auto
+                  max-w-3xl
+                  text-4xl
+                  font-heading
+                  font-extrabold
+                  leading-tight
+                  tracking-tight
+                  text-white
+                  sm:text-5xl
+                  md:text-5xl
+                  lg:text-[52px]
+                "
+              >
+                Ready to Start Your Tech{' '}
+                <span className="text-[#f97316]">
+                  Journey?
+                </span>
+              </h2>
+
+              {/* Description */}
+              <p
+                className="
+                  mx-auto
+                  mt-6
+                  max-w-3xl
+                  text-base
+                  leading-relaxed
+                  text-slate-200
+                  sm:text-lg
+                  md:text-xl
+                "
+              >
+                Admissions are open — join thousands of students
+                learning in-demand tech skills, affordable and fully
+                certified.
+              </p>
+
+              {/* Buttons */}
+              <div
+                className="
+                  mt-9
+                  flex
+                  flex-col
+                  items-center
+                  justify-center
+                  gap-4
+                  sm:flex-row
+                "
+              >
+                <Link
+                  href="/contact"
+                  className="
+                    flex
+                    min-h-[52px]
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#f97316]
+                    px-8
+                    py-3.5
+                    text-base
+                    font-bold
+                    text-white
+                    shadow-sm
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:bg-[#ea580c]
+                    hover:shadow-lg
+                    sm:w-auto
+                    sm:min-w-[180px]
+                    sm:text-lg
+                  "
+                >
+                  Enroll Now
+                </Link>
+
+                <Link
+                  href="/programs"
+                  className="
+                    flex
+                    min-h-[52px]
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-full
+                    border
+                    border-white/30
+                    bg-white/10
+                    px-8
+                    py-3.5
+                    text-base
+                    font-bold
+                    text-white
+                    backdrop-blur-sm
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:bg-white/20
+                    sm:w-auto
+                    sm:min-w-[210px]
+                    sm:text-lg
+                  "
+                >
+                  Browse Programs
+                </Link>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
