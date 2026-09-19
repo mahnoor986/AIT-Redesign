@@ -17,9 +17,9 @@ import Home from '@/views/Home';
 import ProgramDetail from '@/views/ProgramDetail';
 import About from '@/views/About';
 import Admissions from '@/views/Admissions';
-import Campuses from '@/views/Campuses';
 import Contact from '@/views/Contact';
 import StudentPortal from '@/views/StudentPortal';
+import RegisterPage from '@/views/Register'; 
 
 const queryClient = new QueryClient();
 
@@ -31,10 +31,12 @@ function Router() {
         <Route path="/programs/:slug" component={ProgramDetail} />
         <Route path="/about" component={About} />
         <Route path="/admissions" component={Admissions} />
-        <Route path="/campuses" component={Campuses} />
         <Route path="/contact" component={Contact} />
         <Route path="/student-portal" component={StudentPortal} />
-        {/* Alias for viewing all programs, which is anchored on home page */}
+        
+        {/* Navbar waala link /register par ja raha hai */}
+        <Route path="/register" component={RegisterPage} />
+        
         <Route path="/programs">
           {() => {
             window.location.href = '/#programs';
@@ -66,4 +68,3 @@ function App() {
 }
 
 export default App;
-

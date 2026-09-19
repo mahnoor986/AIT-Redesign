@@ -5,12 +5,13 @@ import { FileText, CheckCircle, MessageSquare } from 'lucide-react';
 export default function Admissions() {
   return (
     <AppLayout>
-      <div className="bg-slate-50 py-20 border-b border-slate-200">
+      {/* Updated Hero Section with #274854 and #2a9d8f animated gradient */}
+      <div className="bg-gradient-to-r from-[#274854] via-[#2a9d8f] to-[#274854] bg-[length:200%_200%] animate-gradient py-20 border-b border-slate-700/50">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white mb-6">
             Admissions Process
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-slate-100">
             We evaluate applicants based on motivation, logical reasoning, and readiness to learn. Our process is designed to ensure you're placed in a program where you will thrive.
           </p>
         </div>
@@ -72,13 +73,13 @@ export default function Admissions() {
 
             {/* Fees & Schedule info */}
             <div className="space-y-8">
-               <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
+               <div className="bg-[#274854] text-white rounded-3xl p-8 shadow-xl">
                  <h3 className="text-2xl font-heading font-bold mb-4">Admissions Open</h3>
-                 <p className="text-slate-300 mb-6">Choose a course and contact the AIT team to confirm current batch availability and enrollment steps.</p>
+                 <p className="text-slate-200 mb-6">Choose a course and contact the AIT team to confirm current batch availability and enrollment steps.</p>
                 <Link href="/contact" className="w-full py-4 bg-accent text-white rounded-xl font-bold text-center hover:bg-accent/90 transition-all block min-h-[48px] flex items-center justify-center">
                   Start Application
                 </Link>
-                 <p className="text-xs text-center text-slate-400 mt-4">Seats and schedules vary by course.</p>
+                 <p className="text-xs text-center text-slate-300 mt-4">Seats and schedules vary by course.</p>
               </div>
 
               <div className="bg-white border border-slate-200 rounded-3xl p-8">

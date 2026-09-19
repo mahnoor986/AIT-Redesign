@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import AppLayout from '@/components/layout/AppLayout';
 import HeroSection from '@/components/home/HeroSection';
 import ImpactMetrics from '@/components/home/ImpactMetrics';
@@ -20,41 +23,53 @@ export default function Home() {
       <StudentReviews />
 
       {/* Final CTA */}
-      <section className="bg-[#f5f7f8] py-14 md:py-16 lg:py-20">
+      <section className="bg-white py-10 md:py-12 lg:py-14">
         <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
-          <div
+
+          <motion.div
             className="
               relative
               overflow-hidden
-              rounded-[32px]
-              md:rounded-[36px]
-              bg-gradient-to-br
-              from-[#264653]
-              via-[#264653]
-              to-[#2a9d8f]
+              rounded-[30px]
               px-6
-              py-12
-              sm:px-10
-              sm:py-14
-              md:px-16
-              md:py-16
-              lg:px-20
-              lg:py-20
+              py-10
               text-center
               text-white
+              sm:px-10
+              sm:py-11
+              md:px-14
+              md:py-12
             "
+            style={{
+              background:
+                'linear-gradient(120deg, #274854 0%, #274854 25%, #2a9d8f 55%, #4da199 75%, #274854 100%)',
+              backgroundSize: '250% 250%',
+            }}
+            animate={{
+              backgroundPosition: [
+                '0% 50%',
+                '100% 50%',
+                '0% 50%',
+              ],
+            }}
+            transition={{
+              duration: 10,
+              ease: 'easeInOut',
+              repeat: Infinity,
+            }}
           >
-            {/* Decorative glow */}
+
+            {/* Soft glow */}
             <div
               className="
                 pointer-events-none
                 absolute
                 -right-24
                 -top-24
-                h-72
-                w-72
+                h-64
+                w-64
                 rounded-full
-                bg-[#2a9d8f]/25
+                bg-[#4da199]/25
                 blur-[90px]
               "
             />
@@ -65,147 +80,190 @@ export default function Home() {
                 absolute
                 -bottom-24
                 -left-24
-                h-72
-                w-72
+                h-64
+                w-64
                 rounded-full
-                bg-[#f97316]/15
+                bg-[#2a9d8f]/25
                 blur-[90px]
               "
             />
 
-            {/* Subtle center line */}
+            {/* Subtle light overlay */}
             <div
               className="
                 pointer-events-none
                 absolute
-                left-0
-                top-1/2
-                h-px
-                w-full
-                bg-gradient-to-r
-                from-transparent
-                via-white/10
-                to-transparent
+                inset-0
+                bg-white/[0.025]
               "
             />
 
-            {/* CTA Content */}
-            <div className="relative z-10 mx-auto max-w-4xl text-center">
+            {/* Decorative curved line */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                left-[-10%]
+                top-[10%]
+                h-48
+                w-[120%]
+                rounded-[50%]
+                border
+                border-white/[0.08]
+              "
+            />
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                left-[-10%]
+                bottom-[-35%]
+                h-48
+                w-[120%]
+                rounded-[50%]
+                border
+                border-white/[0.06]
+              "
+            />
+
+            {/* Content */}
+            <div className="relative z-10 mx-auto max-w-4xl">
 
               {/* Heading */}
-              <h2
+              <motion.h2
                 className="
                   mx-auto
                   max-w-3xl
-                  text-4xl
                   font-heading
+                  text-3xl
                   font-extrabold
                   leading-tight
                   tracking-tight
                   text-white
-                  sm:text-5xl
+                  sm:text-4xl
                   md:text-5xl
-                  lg:text-[52px]
+                  lg:text-[48px]
                 "
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                Ready to Start Your Tech{' '}
-                <span className="text-[#f97316]">
-                  Journey?
-                </span>
-              </h2>
+                Ready to Start Your Tech Journey?{' '}
+              </motion.h2>
 
               {/* Description */}
-              <p
+              <motion.p
                 className="
                   mx-auto
-                  mt-6
-                  max-w-3xl
-                  text-base
+                  mt-4
+                  max-w-2xl
+                  text-sm
                   leading-relaxed
-                  text-slate-200
-                  sm:text-lg
-                  md:text-xl
+                  text-white/80
+                  sm:text-base
+                  md:text-lg
                 "
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.1,
+                }}
               >
                 Admissions are open — join thousands of students
                 learning in-demand tech skills, affordable and fully
                 certified.
-              </p>
+              </motion.p>
 
               {/* Buttons */}
-              <div
+              <motion.div
                 className="
-                  mt-9
+                  mt-7
                   flex
                   flex-col
                   items-center
                   justify-center
-                  gap-4
+                  gap-3
                   sm:flex-row
                 "
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.2,
+                }}
               >
+
+                {/* Enroll */}
                 <Link
                   href="/contact"
                   className="
                     flex
-                    min-h-[52px]
+                    min-h-[48px]
                     w-full
                     items-center
                     justify-center
                     rounded-full
-                    bg-[#f97316]
+                    bg-[#2a9d8f]
                     px-8
-                    py-3.5
-                    text-base
+                    py-3
+                    text-sm
                     font-bold
                     text-white
-                    shadow-sm
+                    shadow-lg
+                    shadow-black/10
                     transition-all
                     duration-300
                     hover:-translate-y-1
-                    hover:bg-[#ea580c]
-                    hover:shadow-lg
+                    hover:bg-[#4da199]
+                    hover:shadow-xl
                     sm:w-auto
-                    sm:min-w-[180px]
-                    sm:text-lg
+                    sm:min-w-[165px]
+                    sm:text-base
                   "
                 >
                   Enroll Now
                 </Link>
 
+                {/* Browse */}
                 <Link
                   href="/programs"
                   className="
                     flex
-                    min-h-[52px]
+                    min-h-[48px]
                     w-full
                     items-center
                     justify-center
                     rounded-full
                     border
                     border-white/30
-                    bg-white/10
+                    bg-white/[0.08]
                     px-8
-                    py-3.5
-                    text-base
+                    py-3
+                    text-sm
                     font-bold
                     text-white
                     backdrop-blur-sm
                     transition-all
                     duration-300
                     hover:-translate-y-1
-                    hover:bg-white/20
+                    hover:border-[#4da199]
+                    hover:bg-[#4da199]/20
                     sm:w-auto
-                    sm:min-w-[210px]
-                    sm:text-lg
+                    sm:min-w-[195px]
+                    sm:text-base
                   "
                 >
                   Browse Programs
                 </Link>
-              </div>
 
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </AppLayout>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight, Play, Quote, X } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -51,14 +51,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// const CARD_GRADIENTS = [
-//   'from-slate-900 via-slate-900 to-[#2a9d8f]/40',
-//   'from-slate-900 via-slate-900 to-[#f97316]/30',
-//   'from-[#2a9d8f]/30 via-slate-900 to-slate-900',
-//   'from-slate-900 via-slate-900 to-[#264653]',
-//   'from-[#f97316]/30 via-slate-900 to-slate-900',
-// ];
-
 export default function StudentReviews() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -79,6 +71,7 @@ export default function StudentReviews() {
   // Autoplay effect
   useEffect(() => {
     if (!emblaApi || isPaused) return;
+
     const timer = setInterval(() => {
       emblaApi.scrollNext();
     }, 4500);
@@ -88,13 +81,14 @@ export default function StudentReviews() {
 
   return (
     <section
-      className="overflow-hidden bg-slate-50 dark:bg-slate-950 py-20 md:py-28 transition-colors duration-500 border-t border-slate-200 dark:border-slate-800/80"
+      className="overflow-hidden bg-white py-20 md:py-28 transition-colors duration-500 border-t border-slate-200"
       aria-label="Student reviews"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-1 lg:px-8">
         <div className="grid items-center gap-7 lg:grid-cols-[1fr_1.6fr]">
+
           {/* LEFT COLUMN */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -106,11 +100,13 @@ export default function StudentReviews() {
               Student Reviews
             </span>
 
-            <h2 className="mt-6 font-heading text-3xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl">
-              What Our <span className="text-[#2a9d8f]">Students</span> Say About Us
+            <h2 className="mt-6 font-heading text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              What Our{' '}
+              <span className="text-[#2a9d8f]">Students</span>{' '}
+              Say About Us
             </h2>
 
-            <p className="mt-5 max-w-md text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            <p className="mt-5 max-w-md text-base sm:text-lg leading-relaxed text-slate-600">
               Real stories from our community — students, graduates, and
               education leaders who have experienced AIT.
             </p>
@@ -150,8 +146,7 @@ export default function StudentReviews() {
                   className="w-[82%] sm:w-[47%] lg:w-[46%] flex-none select-none"
                 >
                   <div
-                    className={`group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl bg-[#274854] p-7 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#2a9d8f]/20 border border-white/10
-          `}
+                    className="group relative flex h-[460px] flex-col justify-between overflow-hidden rounded-3xl bg-[#274854] p-7 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#2a9d8f]/20 border border-white/10"
                   >
                     {/* AIT WATERMARK */}
                     <span className="font-mono absolute right-6 top-6 text-sm font-bold tracking-widest text-white/30">

@@ -8,6 +8,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopProgramsOpen, setDesktopProgramsOpen] = useState(false);
+  const [desktopRecognitionsOpen, setDesktopRecognitionsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +60,7 @@ export default function Navbar() {
             onMouseLeave={() => setDesktopProgramsOpen(false)}
           >
             <button className="flex items-center gap-1 text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-2">
-              Programs <ChevronDown className="w-4 h-4" />
+              Courses <ChevronDown className="w-4 h-4" />
             </button>
             
             {/* Desktop Programs Dropdown */}
@@ -70,7 +71,7 @@ export default function Navbar() {
                     <h3 className="font-heading font-bold text-primary mb-2">Explore Paths</h3>
                     <p className="text-xs text-slate-500 mb-4">Discover practical tech programs designed for real-world careers.</p>
                     <Link href="/programs" className="text-sm font-bold text-accent hover:underline flex items-center gap-1">
-                      View all programs <ChevronRight className="w-4 h-4" />
+                      View all courses <ChevronRight className="w-4 h-4" />
                     </Link>
                   </div>
                   <div className="w-2/3 p-6 grid grid-cols-2 gap-x-4 gap-y-6">
@@ -89,9 +90,31 @@ export default function Navbar() {
           <Link href="/admissions" className="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">
             Admissions
           </Link>
-          <Link href="/campuses" className="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">
-            Campuses
-          </Link>
+
+          {/* Recognitions Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setDesktopRecognitionsOpen(true)}
+            onMouseLeave={() => setDesktopRecognitionsOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-2">
+              Recognitions <ChevronDown className="w-4 h-4" />
+            </button>
+            
+            {/* Desktop Recognitions Dropdown */}
+            {desktopRecognitionsOpen && (
+              <div className="absolute top-full left-0 pt-2 w-70 z-70">
+                <div className="bg-white rounded-lg shadow-lg border border-slate-100 py-2">
+                  <Link href="/affiliations" className="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
+                    AIT Institute Affiliations
+                  </Link>
+                  <Link href="/accreditations" className="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
+                    AIT Institute Accreditations
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Actions */}
@@ -102,7 +125,8 @@ export default function Navbar() {
           <Link href="/contact" className="border border-primary/25 text-primary hover:bg-primary/5 px-5 py-2.5 rounded-full text-sm font-bold transition-all min-w-[48px] min-h-[48px] flex items-center justify-center">
             Contact Us
           </Link>
-          <Link href="/contact" className="bg-accent text-white hover:bg-accent/90 px-5 py-2.5 rounded-full text-sm font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 min-w-[48px] min-h-[48px] flex items-center justify-center">
+          {/* Desktop Apply Now Button linked to /register */}
+          <Link href="/register" className="bg-accent text-white hover:bg-accent/90 px-5 py-2.5 rounded-full text-sm font-bold transition-all hover:shadow-lg hover:-translate-y-0.5 min-w-[48px] min-h-[48px] flex items-center justify-center">
             Apply Now
           </Link>
         </div>
@@ -120,7 +144,7 @@ export default function Navbar() {
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-0 bg-white z-40 flex flex-col pt-24 px-6 md:hidden overflow-y-auto">
-          <nav className="flex flex-col gap-6 text-lg font-heading font-semibold text-slate-800">
+          <nav className="flex flex-col gap-6 text-lg font-heading font-semibold text-slate-800 pb-12">
             <Link href="/" className="pb-4 border-b border-slate-100">Home</Link>
             <div className="pb-4 border-b border-slate-100">
               <span className="text-slate-400 text-sm font-sans font-bold uppercase tracking-wider mb-4 block">Programs</span>
@@ -135,10 +159,25 @@ export default function Navbar() {
             <Link href="/about" className="pb-4 border-b border-slate-100">About AIT</Link>
             <Link href="/admissions" className="pb-4 border-b border-slate-100">Admissions</Link>
             <Link href="/campuses" className="pb-4 border-b border-slate-100">Campuses</Link>
+            
+            {/* Mobile Recognitions Section */}
+            <div className="pb-4 border-b border-slate-100">
+              <span className="text-slate-400 text-sm font-sans font-bold uppercase tracking-wider mb-4 block">Recognitions</span>
+              <div className="flex flex-col gap-4 pl-4 border-l-2 border-slate-100">
+                <Link href="/affiliations" className="text-base font-medium text-slate-600">
+                  Affiliations
+                </Link>
+                <Link href="/accreditations" className="text-base font-medium text-slate-600">
+                  Accreditations
+                </Link>
+              </div>
+            </div>
+
             <Link href="/student-portal" className="pb-4 border-b border-slate-100 text-primary">Student Portal</Link>
             
-            <Link href="/contact" className="mt-4 bg-accent text-white text-center py-4 rounded-xl font-bold text-lg min-h-[48px] flex items-center justify-center">
-              Start Application
+            {/* Mobile Start Application / Apply Now Button linked to /register */}
+            <Link href="/register" className="mt-4 bg-accent text-white text-center py-4 rounded-xl font-bold text-lg min-h-[48px] flex items-center justify-center">
+              Apply Now
             </Link>
           </nav>
         </div>

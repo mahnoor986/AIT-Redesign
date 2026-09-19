@@ -3,27 +3,27 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#274854] text-slate-200 pt-10 pb-5 border-t border-[#1f3a44]">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-[#274854] text-slate-200 pt-14 pb-6 border-t border-[#1f3a44]">
+      <div className="container mx-auto px-5 md:px-8 lg:px-10">
 
         {/* Main Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-10">
 
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-block mb-3">
+            <Link href="/" className="inline-block mb-4">
               <img
                 src="/ait-assets/AIT_Logo_Day.17imzcr09m~20.png"
                 alt="AIT Institute"
-                className="h-10 w-20 object-contain object-left brightness-0 invert"
+                className="h-12 w-24 object-contain object-left brightness-0 invert"
               />
 
-              <div className="text-[10px] font-semibold text-[#2a9d8f] uppercase tracking-widest leading-tight mt-0.5">
+              <div className="text-[11px] font-semibold text-[#2a9d8f] uppercase tracking-widest leading-tight mt-1">
                 Al-Khair Institute
               </div>
             </Link>
 
-            <p className="text-slate-300 text-xs mb-4 max-w-sm leading-relaxed">
+            <p className="text-slate-300 text-sm mb-5 max-w-sm leading-relaxed">
               Empowering the next generation of tech leaders through practical,
               verified, and industry-aligned education.
             </p>
@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
 
               {/* Twitter */}
-              <div className="w-8 h-8 rounded-full bg-[#1f3a44] flex items-center justify-center hover:bg-[#2a9d8f] transition-colors cursor-pointer">
+              <div className="w-9 h-9 rounded-full bg-[#1f3a44] flex items-center justify-center hover:bg-[#2a9d8f] transition-colors cursor-pointer">
                 <span className="sr-only">Twitter</span>
 
                 <svg
@@ -46,7 +46,7 @@ export default function Footer() {
               </div>
 
               {/* LinkedIn */}
-              <div className="w-8 h-8 rounded-full bg-[#1f3a44] flex items-center justify-center hover:bg-[#2a9d8f] transition-colors cursor-pointer">
+              <div className="w-9 h-9 rounded-full bg-[#1f3a44] flex items-center justify-center hover:bg-[#2a9d8f] transition-colors cursor-pointer">
                 <span className="sr-only">LinkedIn</span>
 
                 <svg
@@ -57,7 +57,7 @@ export default function Footer() {
                 >
                   <path
                     fillRule="evenodd"
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.761 0 5-2.238 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                     clipRule="evenodd"
                   />
                 </svg>
@@ -68,15 +68,15 @@ export default function Footer() {
 
           {/* Explore */}
           <div>
-            <h4 className="text-white font-heading font-bold mb-3 uppercase tracking-wider text-xs">
+            <h4 className="text-white font-heading font-bold mb-4 uppercase tracking-wider text-sm">
               Explore
             </h4>
 
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               <li>
                 <Link
                   href="/programs/web-development"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Web Development
                 </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/programs/ai-data-science"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   AI & Data Science
                 </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/programs/graphics-design-video-editing"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Design & Video
                 </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/programs/cybersecurity"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Cybersecurity
                 </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/admissions"
-                  className="text-xs hover:text-primary transition-colors inline-block text-accent"
+                  className="text-sm hover:text-primary transition-colors inline-block text-accent"
                 >
                   View all programs →
                 </Link>
@@ -122,15 +122,15 @@ export default function Footer() {
 
           {/* Institute */}
           <div>
-            <h4 className="text-white font-heading font-bold mb-3 uppercase tracking-wider text-xs">
+            <h4 className="text-white font-heading font-bold mb-4 uppercase tracking-wider text-sm">
               Institute
             </h4>
 
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               <li>
                 <Link
                   href="/about"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   About Us
                 </Link>
@@ -139,7 +139,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/campuses"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Campuses & Facilities
                 </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/admissions"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Admissions & Fees
                 </Link>
@@ -157,7 +157,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/student-portal"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Student Portal
                 </Link>
@@ -166,7 +166,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-xs hover:text-primary transition-colors inline-block"
+                  className="text-sm hover:text-primary transition-colors inline-block"
                 >
                   Contact Support
                 </Link>
@@ -176,17 +176,17 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-heading font-bold mb-3 uppercase tracking-wider text-xs">
+            <h4 className="text-white font-heading font-bold mb-4 uppercase tracking-wider text-sm">
               Get in touch
             </h4>
 
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
 
               {/* Location */}
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#2a9d8f] shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#2a9d8f] shrink-0 mt-0.5" />
 
-                <span className="text-xs leading-relaxed">
+                <span className="text-sm leading-relaxed">
                   AIT campuses across Karachi
                   <br />
                   Contact admissions for locations
@@ -194,24 +194,24 @@ export default function Footer() {
               </li>
 
               {/* Phone */}
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#2a9d8f] shrink-0" />
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#2a9d8f] shrink-0" />
 
                 <Link
                   href="/contact"
-                  className="text-xs hover:text-white transition-colors"
+                  className="text-sm hover:text-white transition-colors"
                 >
                   Contact admissions support
                 </Link>
               </li>
 
               {/* Email */}
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#2a9d8f] shrink-0" />
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-[#2a9d8f] shrink-0" />
 
                 <Link
                   href="/contact"
-                  className="text-xs hover:text-white transition-colors"
+                  className="text-sm hover:text-white transition-colors"
                 >
                   Send an inquiry online
                 </Link>
@@ -222,14 +222,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#1f3a44] pt-4 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div className="border-t border-[#1f3a44] pt-5 flex flex-col md:flex-row justify-between items-center gap-3">
 
-          <p className="text-[10px] text-slate-300">
+          <p className="text-xs text-slate-300">
             &copy; {new Date().getFullYear()} Al-Khair Institute of Technology.
             All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4 text-[10px] text-slate-300">
+          <div className="flex items-center gap-5 text-xs text-slate-300">
             <Link
               href="/privacy"
               className="hover:text-white transition-colors"
